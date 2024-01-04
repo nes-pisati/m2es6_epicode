@@ -130,3 +130,7 @@ h1 {
         width: 100px;
     }
 }
+
+.hide-image {
+    display: none;
+}

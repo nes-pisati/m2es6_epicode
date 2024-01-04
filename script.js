@@ -25,6 +25,9 @@ function renderProducts(){
         const image = document.createElement("img");
         image.src = product.image;
         image.classList.add("card-image");
+        image.onclick = function(){
+            this.classList.toggle('hide-image');
+        }
 
         const description = document.createElement("p");
         description.textContent = product.description;
@@ -49,6 +52,7 @@ function renderProducts(){
         const button = document.createElement("button");
         button.classList.add("card-button");
         button.textContent = "Aggiungi commento";
+        button.addEventListener("click", getComment());
 
         cardContainer.append(title, image, description, price, link, input, button);
         container.append(cardContainer);
@@ -97,20 +101,18 @@ function footerLinkReplace() {
 
 footerLinkReplace();
 
+let comments = [];
 
-function addComment(){
+function getComment(){
     let comments = [];
-    const inputField = document.querySelectorAll("input-field");
-    const button = document.getElementsByClassName("card-button")
-    console.log(button);
-    /*button.addEventListener("click", ()=> {
-        if (inputField.value===""){
-            alert("Per favore inserisci un commento");
-        } else {
-                comments.push(inputField.value);
-                console.log(comments);
-            };
-    })*/
-};
+    const input = document.getElementsByClassName("input-field");
+    if (input.value === ""){
+        alert("Per favore inserisci un commento");
+    } else {
+            comments.push(input.value);
+        };
 
-addComment();
+    console.log(comments);
+}
+
+getComment();
