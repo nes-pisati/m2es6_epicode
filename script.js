@@ -52,7 +52,7 @@ function renderProducts(){
         const button = document.createElement("button");
         button.classList.add("card-button");
         button.textContent = "Aggiungi commento";
-        button.addEventListener("click", getComment());
+        //button.addEventListener("click", getComment());
 
         cardContainer.append(title, image, description, price, link, input, button);
         container.append(cardContainer);
@@ -101,18 +101,21 @@ function footerLinkReplace() {
 
 footerLinkReplace();
 
-let comments = [];
+/*let comments = [];
 
 function getComment(){
-    let comments = [];
-    const input = document.getElementsByClassName("input-field");
-    if (input.value === ""){
-        alert("Per favore inserisci un commento");
+    const input = document.getElementsByClassName("input-field").value;
+    if (input.trim !== ""){
+        comments.push(input);
     } else {
-            comments.push(input.value);
+        console.log("Per favore inserisci un commento")
         };
-
-    console.log(comments);
+    
+    document.getElementsByClassName("input-field").value = "";
 }
 
 getComment();
+
+
+console.log(comments)*/
+
